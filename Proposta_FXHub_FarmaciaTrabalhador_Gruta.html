@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial | Farmácia do Trabalhador de Alagoas, unidade Gruta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A0A; --bg2:#111010; --card:#151313; --line:rgba(255,255,255,.08);
+  --orange:#E94E1B; --red:#9E2700; --char:#2E2A29; --white:#FFFFFF;
+  --muted:rgba(255,255,255,.62); --soft:rgba(255,255,255,.42);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.ox{font-family:'Oxanium',sans-serif;letter-spacing:-.01em}
+a{color:inherit}
+
+/* texture + grid */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.grid-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%)}
+.glow{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;opacity:.45}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+section{position:relative;padding:110px 0}
+
+/* top bar */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;background:linear-gradient(#0A0A0A 30%,rgba(10,10,10,0));}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Oxanium';font-weight:800;font-size:20px;letter-spacing:.02em}
+.logo span{color:var(--orange)}
+.logo small{display:block;font-weight:500;font-size:9px;letter-spacing:.34em;color:var(--soft);margin-top:-2px}
+.tag{font-family:'Oxanium';font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:130px;overflow:hidden}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Oxanium';font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);margin-bottom:26px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--orange)}
+.hero h1{font-size:clamp(40px,6.4vw,82px);line-height:1.02;font-weight:700;max-width:960px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:640px;margin-top:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:46px}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,.02);padding:12px 18px;border-radius:4px;font-size:14px}
+.chip b{display:block;font-family:'Oxanium';font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);font-weight:500}
+
+/* viewfinder */
+.vf{position:relative}
+.vf::before,.vf::after,.vf>.c1,.vf>.c2{content:"";position:absolute;width:22px;height:22px;border-color:var(--orange);border-style:solid;pointer-events:none}
+.vf::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.vf::after{top:-1px;right:-1px;border-width:2px 2px 0 0}
+.vf>.c1{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+.vf>.c2{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg2);padding:18px 0;position:relative;z-index:3}
+.marquee .track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee.rev .track{animation-direction:reverse}
+.marquee span{font-family:'Oxanium';font-weight:600;font-size:20px;text-transform:uppercase;letter-spacing:.06em;padding:0 22px;white-space:nowrap;color:rgba(255,255,255,.85)}
+.marquee span.ar{color:var(--orange)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* headings */
+.sec-num{font-family:'Oxanium';font-size:13px;letter-spacing:.24em;color:var(--orange);text-transform:uppercase;margin-bottom:16px;display:block}
+h2{font-size:clamp(30px,4vw,50px);line-height:1.08;font-weight:700;max-width:820px}
+h2 em{font-style:normal;color:var(--orange)}
+.intro{color:var(--muted);font-size:18px;max-width:720px;margin-top:22px}
+.intro + .intro{margin-top:14px}
+
+/* context */
+.ctx-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:56px;align-items:start}
+.ctx-grid p{color:var(--muted);margin-bottom:16px}
+.ctx-grid p strong{color:var(--white);font-weight:600}
+.fact-card{background:var(--card);border:1px solid var(--line);padding:30px}
+.fact-card h4{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);font-weight:500;margin-bottom:18px}
+.fact{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.fact:last-child{border-bottom:0}
+.fact span:first-child{color:var(--soft)}
+.fact span:last-child{text-align:right;font-weight:600}
+
+/* diagnostic */
+.diag-top{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.kpi{background:var(--card);border:1px solid var(--line);padding:26px 22px}
+.kpi .v{font-family:'Oxanium';font-size:44px;font-weight:700;line-height:1;color:var(--white)}
+.kpi .v small{font-size:18px;color:var(--soft);font-weight:500}
+.kpi .l{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+.kpi.hl{background:linear-gradient(150deg,rgba(233,78,27,.18),rgba(158,39,0,.08));border-color:rgba(233,78,27,.4)}
+.kpi.hl .v{color:var(--orange)}
+
+.chart-box{margin-top:26px;background:var(--card);border:1px solid var(--line);padding:34px 34px 30px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.chart-box h4{font-size:16px;font-weight:600;margin-bottom:6px}
+.chart-box .sub{font-size:13.5px;color:var(--soft);margin-bottom:24px}
+.bar-row{margin-bottom:16px}
+.bar-label{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:7px;color:var(--muted)}
+.bar-label b{color:var(--white);font-family:'Oxanium';font-weight:600}
+.bar{height:12px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:rgba(255,255,255,.28);border-radius:2px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.bar-row.me .bar-label{color:var(--white)}
+.bar-row.me .bar i{background:linear-gradient(90deg,var(--red),var(--orange))}
+.chart-note{grid-column:1/-1;font-size:13px;color:var(--soft);border-top:1px solid var(--line);padding-top:18px;margin-top:-10px}
+
+.diag-list{margin-top:48px;display:grid;gap:14px}
+.d-item{display:grid;grid-template-columns:64px 1fr 1fr;gap:28px;background:var(--card);border:1px solid var(--line);padding:26px 28px;transition:border-color .3s,transform .3s}
+.d-item:hover{border-color:rgba(233,78,27,.45);transform:translateY(-2px)}
+.d-item .n{font-family:'Oxanium';font-size:28px;font-weight:700;color:var(--orange);line-height:1}
+.d-item h4{font-size:18px;font-weight:600;margin-bottom:8px}
+.d-item p{font-size:14.5px;color:var(--muted)}
+.d-item .act{border-left:2px solid var(--orange);padding-left:20px}
+.d-item .act b{display:block;font-family:'Oxanium';font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:6px}
+.d-item .act p{color:rgba(255,255,255,.82)}
+
+/* strategy */
+.strat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.st{padding:34px 28px;border:1px solid var(--line);background:var(--card);position:relative;overflow:hidden}
+.st .k{font-family:'Oxanium';font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.st h3{font-size:24px;line-height:1.15;margin-bottom:14px}
+.st p{font-size:14.5px;color:var(--muted)}
+.st .big{position:absolute;right:-8px;bottom:-26px;font-family:'Oxanium';font-weight:800;font-size:120px;color:rgba(255,255,255,.03);line-height:1}
+.flow{display:flex;align-items:center;gap:0;margin-top:22px;flex-wrap:wrap}
+.flow div{flex:1;min-width:150px;text-align:center;padding:18px 12px;border:1px solid var(--line);font-family:'Oxanium';font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.015)}
+.flow div.o{background:var(--orange);border-color:var(--orange)}
+.flow i{font-style:normal;font-family:'Oxanium';color:var(--orange);padding:0 10px;font-weight:700}
+
+/* scope */
+.scope{margin-top:56px;display:grid;gap:18px}
+.blk{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:38px;background:var(--card);border:1px solid var(--line)}
+.blk .h .num{font-family:'Oxanium';font-size:54px;font-weight:800;color:var(--orange);line-height:1;margin-bottom:12px}
+.blk .h h3{font-size:22px;line-height:1.2}
+.blk .h p{font-size:14px;color:var(--soft);margin-top:10px}
+.blk ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 30px}
+.blk li{font-size:14.5px;color:rgba(255,255,255,.82);padding-left:22px;position:relative;line-height:1.5}
+.blk li::before{content:">";position:absolute;left:0;top:0;font-family:'Oxanium';font-weight:700;color:var(--orange)}
+
+/* timeline */
+.tl{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--char);position:relative}
+.tl::before{content:"";position:absolute;top:-2px;left:0;height:2px;width:0;background:var(--orange);transition:width 2s ease}
+.tl.in::before{width:100%}
+.tl .s{padding:30px 22px 0 0;position:relative}
+.tl .s::before{content:"";position:absolute;top:-8px;left:0;width:14px;height:14px;background:var(--bg);border:2px solid var(--orange);transform:rotate(45deg)}
+.tl .s b{font-family:'Oxanium';font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:8px}
+.tl .s h4{font-size:18px;margin-bottom:8px}
+.tl .s p{font-size:14px;color:var(--muted)}
+
+/* method */
+.method{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px}
+.m{padding:30px;border:1px solid var(--line);display:flex;gap:22px;background:rgba(255,255,255,.015)}
+.m .ic{flex:0 0 44px;height:44px;border:1px solid rgba(233,78,27,.5);display:flex;align-items:center;justify-content:center;font-family:'Oxanium';font-weight:700;color:var(--orange)}
+.m h4{font-size:18px;margin-bottom:6px}
+.m p{font-size:14.5px;color:var(--muted)}
+
+/* budget */
+.budget{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bud{background:var(--card);border:1px solid var(--line);padding:32px}
+.bud .t{font-family:'Oxanium';font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
+.bud .val{font-family:'Oxanium';font-size:38px;font-weight:700}
+.bud .val small{font-size:16px;color:var(--soft);font-weight:500}
+.bud p{font-size:14.5px;color:var(--muted);margin-top:10px}
+.split{margin-top:22px;display:flex;height:14px;border-radius:2px;overflow:hidden}
+.split .a{background:var(--orange);width:60%}
+.split .b{background:var(--red);width:40%}
+.legend{display:flex;gap:22px;margin-top:12px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:8px;vertical-align:middle}
+.budget-note{margin-top:18px;font-size:14px;color:var(--soft);max-width:820px}
+
+/* pricing */
+.plans{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.plan{padding:42px 38px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;position:relative}
+.plan .pt{font-family:'Oxanium';font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:22px}
+.plan .price{font-family:'Oxanium';font-weight:700;font-size:58px;line-height:1}
+.plan .price small{font-size:20px;font-weight:500;color:var(--soft)}
+.plan .cur{font-size:22px;vertical-align:top;margin-right:4px;color:var(--soft);font-weight:500}
+.plan .desc{color:var(--muted);font-size:15px;margin-top:16px}
+.plan ul{list-style:none;margin-top:26px;display:grid;gap:10px;flex:1;align-content:start}
+.plan li{font-size:14.5px;padding-left:22px;position:relative;color:rgba(255,255,255,.82)}
+.plan li::before{content:">";position:absolute;left:0;font-family:'Oxanium';font-weight:700;color:var(--orange)}
+.plan.best{background:linear-gradient(160deg,rgba(233,78,27,.2),rgba(158,39,0,.1) 55%,var(--card));border-color:var(--orange)}
+.badge{position:absolute;top:-14px;left:38px;background:var(--orange);color:#fff;font-family:'Oxanium';font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px}
+.save{display:inline-block;margin-top:14px;font-family:'Oxanium';font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--orange);border:1px solid rgba(233,78,27,.5);padding:5px 12px}
+.pay-note{margin-top:20px;font-size:14px;color:var(--soft)}
+
+/* next */
+.steps{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{padding:28px 24px;border:1px solid var(--line);counter-increment:s;background:rgba(255,255,255,.015)}
+.step::before{content:"0" counter(s);font-family:'Oxanium';font-size:32px;font-weight:800;color:var(--orange);display:block;margin-bottom:14px}
+.step h4{font-size:17px;margin-bottom:6px}
+.step p{font-size:14px;color:var(--muted)}
+
+.cta{text-align:center;padding:130px 0 120px;overflow:hidden}
+.cta h2{margin:0 auto;max-width:860px}
+.cta p{color:var(--muted);margin:22px auto 0;max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:12px;margin-top:40px;background:var(--orange);color:#fff;text-decoration:none;font-family:'Oxanium';font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:18px 34px;transition:background .3s,transform .3s}
+.btn:hover{background:var(--red);transform:translateY(-2px)}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+@media (max-width:900px){
+  section{padding:80px 0}
+  .ctx-grid,.chart-box,.budget,.plans{grid-template-columns:1fr}
+  .diag-top{grid-template-columns:1fr 1fr}
+  .d-item{grid-template-columns:1fr;gap:14px}
+  .strat,.method{grid-template-columns:1fr}
+  .blk{grid-template-columns:1fr;gap:24px;padding:30px 24px}
+  .blk ul{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr 1fr;row-gap:34px}
+  .steps{grid-template-columns:1fr 1fr}
+  .flow i{display:none}
+  .flow{gap:8px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .diag-top,.tl,.steps{grid-template-columns:1fr}
+  .plan{padding:36px 24px}
+  .plan .price{font-size:46px}
+  .tag{display:none}
+}
+@media print{
+  .rv{opacity:1!important;transform:none!important}
+  .bar i{transition:none}
+  .topbar{position:absolute}
+  .marquee .track{animation:none}
+  body::before{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="logo">FX HUB <span>CREATIVE</span><small>MARKETING E VENDAS</small></div>
+    <div class="tag">Proposta comercial / Set 2026</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="glow" style="width:520px;height:520px;background:var(--orange);top:-120px;right:-160px" data-px="0.25"></div>
+  <div class="glow" style="width:420px;height:420px;background:var(--red);bottom:-160px;left:-140px;opacity:.35" data-px="-0.15"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">Tráfego pago + Google Meu Negócio</div>
+    <h1 class="rv d1">Quem procura farmácia na Gruta precisa <em>encontrar você primeiro.</em></h1>
+    <p class="lead rv d2">Uma estrutura de presença local e anúncios para transformar a reputação que a unidade já construiu em mais visitas à loja, mais pedidos de entrega e mais clientes recorrentes.</p>
+    <div class="hero-meta rv d3">
+      <div class="chip"><b>Cliente</b>Farmácia do Trabalhador de Alagoas | Gruta</div>
+      <div class="chip"><b>Razão social</b>Saúde Farma Ltda</div>
+      <div class="chip"><b>Escopo</b>Meta Ads, Google Ads e Perfil no Google</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee"><div class="track">
+  <span>Busca local</span><span class="ar">&gt;&gt;&gt;</span><span>Rotas até a loja</span><span class="ar">&gt;&gt;&gt;</span><span>Pedidos no WhatsApp</span><span class="ar">&gt;&gt;&gt;</span><span>Reputação</span><span class="ar">&gt;&gt;&gt;</span><span>Recorrência</span><span class="ar">&gt;&gt;&gt;</span>
+  <span>Busca local</span><span class="ar">&gt;&gt;&gt;</span><span>Rotas até a loja</span><span class="ar">&gt;&gt;&gt;</span><span>Pedidos no WhatsApp</span><span class="ar">&gt;&gt;&gt;</span><span>Reputação</span><span class="ar">&gt;&gt;&gt;</span><span>Recorrência</span><span class="ar">&gt;&gt;&gt;</span>
+</div></div>
+
+<!-- 01 CONTEXTO -->
+<section>
+  <div class="wrap">
+    <span class="sec-num rv">01 / Contexto</span>
+    <h2 class="rv d1">Farmácia é compra de <em>proximidade e urgência.</em></h2>
+    <div class="ctx-grid">
+      <div class="rv d2">
+        <p>Na maior parte das vezes, a decisão de compra em farmácia acontece em poucos minutos. A pessoa está com uma receita na mão, sentiu um sintoma ou lembrou que o remédio de uso contínuo acabou. Ela pega o celular, pesquisa <strong>"farmácia perto de mim"</strong> ou <strong>"farmácia aberta agora"</strong> e escolhe entre as primeiras opções que aparecem no mapa.</p>
+        <p>A unidade da Gruta está em um dos pontos de maior fluxo de Maceió, na Av. Fernandes Lima, dividindo a atenção com grandes redes nacionais. Nesse cenário, <strong>não vence quem tem a maior loja, e sim quem aparece melhor no momento da busca</strong> e deixa claro por que vale a pena escolher ali.</p>
+        <p>A boa notícia é que a Farmácia do Trabalhador já tem o ativo mais difícil de construir: clientes que elogiam o preço e o atendimento. O trabalho agora é dar escala a essa percepção, com um perfil no Google mais completo e anúncios que coloquem a loja na frente de quem está a poucos minutos dela.</p>
+      </div>
+      <div class="fact-card vf rv d3"><i class="c1"></i><i class="c2"></i>
+        <h4>Perfil da unidade</h4>
+        <div class="fact"><span>Endereço</span><span>Av. Fernandes Lima, 3702, Gruta de Lourdes</span></div>
+        <div class="fact"><span>Funcionamento</span><span>Seg a sex 7h às 23h<br>Sáb 7h às 22h / Dom 8h às 20h</span></div>
+        <div class="fact"><span>Modalidades</span><span>Loja, retirada e entrega</span></div>
+        <div class="fact"><span>Nota no Google</span><span>4,5 (72 avaliações)</span></div>
+        <div class="fact"><span>Tema mais citado</span><span>Preço</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 DIAGNOSTICO -->
+<section style="background:var(--bg2);overflow:hidden">
+  <div class="grid-bg" style="opacity:.6"></div>
+  <div class="wrap">
+    <span class="sec-num rv">02 / Diagnóstico do perfil no Google</span>
+    <h2 class="rv d1">A reputação já está acima das grandes redes. <em>O alcance ainda não.</em></h2>
+    <p class="intro rv d2">Analisamos o perfil público da unidade no Google Maps e comparamos com as farmácias que disputam a mesma busca na Av. Fernandes Lima. Os dados abaixo foram coletados em setembro de 2026.</p>
+
+    <div class="diag-top">
+      <div class="kpi hl rv"><div class="v">4,5<small> /5</small></div><div class="l">Nota média, a maior entre as grandes farmácias da avenida</div></div>
+      <div class="kpi rv d1"><div class="v">72</div><div class="l">Avaliações publicadas. As redes vizinhas têm entre 2x e 2,6x mais</div></div>
+      <div class="kpi rv d2"><div class="v">10</div><div class="l">Menções a "preço" nas avaliações, o principal argumento da marca</div></div>
+      <div class="kpi rv d3"><div class="v">7h<small> às 23h</small></div><div class="l">Janela diária de atendimento para anúncios de busca imediata</div></div>
+    </div>
+
+    <div class="chart-box rv">
+      <div>
+        <h4>Nota média no Google</h4>
+        <div class="sub">Quanto maior, mais confiança na hora da escolha</div>
+        <div class="bar-row me"><div class="bar-label"><span>Farmácia do Trabalhador | Gruta</span><b>4,5</b></div><div class="bar"><i data-w="90"></i></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Drogasil (Fernandes Lima, 3204)</span><b>3,9</b></div><div class="bar"><i data-w="78"></i></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Pague Menos (Fernandes Lima, 3500)</span><b>3,8</b></div><div class="bar"><i data-w="76"></i></div></div>
+      </div>
+      <div>
+        <h4>Volume de avaliações</h4>
+        <div class="sub">Quanto maior, mais relevância no ranking do mapa</div>
+        <div class="bar-row"><div class="bar-label"><span>Pague Menos (Fernandes Lima, 3500)</span><b>187</b></div><div class="bar"><i data-w="100"></i></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Drogasil (Fernandes Lima, 3204)</span><b>149</b></div><div class="bar"><i data-w="80"></i></div></div>
+        <div class="bar-row me"><div class="bar-label"><span>Farmácia do Trabalhador | Gruta</span><b>72</b></div><div class="bar"><i data-w="38.5"></i></div></div>
+      </div>
+      <div class="chart-note">Leitura: a unidade entrega uma experiência melhor avaliada, mas ainda com menos prova social acumulada. Aumentar o volume de avaliações é o caminho mais rápido para ganhar posições no mapa sem depender só de anúncio.</div>
+    </div>
+
+    <div class="diag-list">
+      <div class="d-item rv">
+        <div class="n">01</div>
+        <div><h4>Volume e ritmo de avaliações</h4><p>São 72 avaliações no total, e as que aparecem em destaque foram publicadas entre 5 e 10 meses atrás. O Google valoriza perfis com avaliações frequentes e recentes na hora de ordenar o mapa.</p></div>
+        <div class="act"><b>O que vamos fazer</b><p>Rotina de captação no balcão e na entrega, com QR code, mensagem pós-compra no WhatsApp e acompanhamento mensal da meta de novas avaliações.</p></div>
+      </div>
+      <div class="d-item rv">
+        <div class="n">02</div>
+        <div><h4>Respostas às avaliações</h4><p>A avaliação que aparece no resumo do perfil é uma crítica sobre preço na prateleira, sem resposta pública da farmácia. Quem pesquisa lê esse trecho antes de conhecer a loja.</p></div>
+        <div class="act"><b>O que vamos fazer</b><p>Responder todas as avaliações, positivas e negativas, com padrão de tom definido junto à gerência, mostrando cuidado e transformando a crítica em demonstração de atenção ao cliente.</p></div>
+      </div>
+      <div class="d-item rv">
+        <div class="n">03</div>
+        <div><h4>Link do site e canal de pedido</h4><p>O perfil direciona para um agregador de links (meulinkai.com). Isso adiciona um clique a mais entre a busca e o pedido e impede medir quantos contatos vieram do Google.</p></div>
+        <div class="act"><b>O que vamos fazer</b><p>Configurar link direto para o WhatsApp de pedidos, com rastreamento, e ativar o botão de mensagem no perfil para quem quer pedir entrega sem ligar.</p></div>
+      </div>
+      <div class="d-item rv">
+        <div class="n">04</div>
+        <div><h4>Atualizações e ofertas no perfil</h4><p>Não identificamos publicações recentes do proprietário. O perfil hoje funciona como um cartão de endereço, quando poderia funcionar como vitrine de ofertas.</p></div>
+        <div class="act"><b>O que vamos fazer</b><p>Publicações semanais com ofertas de perfumaria, dermocosméticos, fraldas e itens de conveniência, datas sazonais e avisos de horário estendido.</p></div>
+      </div>
+      <div class="d-item rv">
+        <div class="n">05</div>
+        <div><h4>Informações, categorias e serviços</h4><p>O perfil tem os atributos básicos (loja, retirada e entrega). Há espaço para detalhar serviços farmacêuticos, formas de pagamento, categorias secundárias e uma descrição com os termos que as pessoas pesquisam.</p></div>
+        <div class="act"><b>O que vamos fazer</b><p>Revisão completa do cadastro: descrição otimizada, categorias, serviços oferecidos na unidade, perguntas e respostas frequentes e padronização de fotos da fachada e do interior.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee rev"><div class="track">
+  <span>Perfil otimizado</span><span class="ar">&lt;&lt;&lt;</span><span>Google Ads</span><span class="ar">&lt;&lt;&lt;</span><span>Meta Ads</span><span class="ar">&lt;&lt;&lt;</span><span>Dados</span><span class="ar">&lt;&lt;&lt;</span><span>Crescimento local</span><span class="ar">&lt;&lt;&lt;</span>
+  <span>Perfil otimizado</span><span class="ar">&lt;&lt;&lt;</span><span>Google Ads</span><span class="ar">&lt;&lt;&lt;</span><span>Meta Ads</span><span class="ar">&lt;&lt;&lt;</span><span>Dados</span><span class="ar">&lt;&lt;&lt;</span><span>Crescimento local</span><span class="ar">&lt;&lt;&lt;</span>
+</div></div>
+
+<!-- 03 ESTRATEGIA -->
+<section>
+  <div class="wrap">
+    <span class="sec-num rv">03 / Estratégia</span>
+    <h2 class="rv d1">Primeiro a vitrine. <em>Depois o tráfego.</em></h2>
+    <p class="intro rv d2">Anúncio que leva para um perfil incompleto desperdiça verba. Por isso a ordem importa: primeiro deixamos o Perfil da Empresa pronto para converter, depois colocamos Google e Meta trabalhando juntos, cada um no papel em que é mais forte.</p>
+
+    <div class="strat">
+      <div class="st rv"><div class="k">Base</div><h3>Google Meu Negócio</h3><p>O perfil vira o principal ponto de conversão: ligação, rota até a loja e pedido pelo WhatsApp. É onde a busca orgânica e os anúncios se encontram.</p><div class="big">01</div></div>
+      <div class="st rv d1"><div class="k">Intenção</div><h3>Google Ads</h3><p>Captura quem já está procurando farmácia na região. Campanhas de pesquisa e de ações locais focadas em ligação, rota e contato, com segmentação por raio a partir da loja.</p><div class="big">02</div></div>
+      <div class="st rv d2"><div class="k">Demanda</div><h3>Meta Ads</h3><p>Gera lembrança e recorrência no Instagram e Facebook para moradores e trabalhadores do entorno, com ofertas que levam direto para uma conversa no WhatsApp.</p><div class="big">03</div></div>
+    </div>
+
+    <div class="flow rv">
+      <div>Busca ou anúncio</div><i>&gt;&gt;&gt;</i><div>Perfil no Google</div><i>&gt;&gt;&gt;</i><div>WhatsApp, ligação ou rota</div><i>&gt;&gt;&gt;</i><div class="o">Venda</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ESCOPO -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <span class="sec-num rv">04 / Escopo de serviços</span>
+    <h2 class="rv d1">O que está incluso.</h2>
+    <div class="scope">
+      <div class="blk rv">
+        <div class="h"><div class="num">01</div><h3>Otimização do Google Meu Negócio</h3><p>Estruturação inicial e gestão contínua do perfil</p></div>
+        <ul>
+          <li>Revisão completa do cadastro, descrição e categorias</li>
+          <li>Cadastro de serviços, atributos e formas de pagamento</li>
+          <li>Link direto e rastreável para o WhatsApp de pedidos</li>
+          <li>Publicações semanais de ofertas e avisos</li>
+          <li>Resposta a todas as avaliações</li>
+          <li>Estratégia de captação de novas avaliações (QR code e pós-venda)</li>
+          <li>Perguntas e respostas frequentes no perfil</li>
+          <li>Orientação e organização de fotos da loja</li>
+        </ul>
+      </div>
+      <div class="blk rv">
+        <div class="h"><div class="num">02</div><h3>Gestão de Google Ads</h3><p>Anúncios para quem já está procurando</p></div>
+        <ul>
+          <li>Estrutura de campanhas de pesquisa com termos de intenção local</li>
+          <li>Campanhas com foco em ligação, rota e contato</li>
+          <li>Segmentação por raio a partir da unidade e por horário de funcionamento</li>
+          <li>Configuração de conversões e integração com o Perfil da Empresa</li>
+          <li>Negativação de termos sem potencial de venda</li>
+          <li>Otimizações semanais de lances, anúncios e palavras-chave</li>
+        </ul>
+      </div>
+      <div class="blk rv">
+        <div class="h"><div class="num">03</div><h3>Gestão de Meta Ads</h3><p>Instagram e Facebook para gerar demanda e recorrência</p></div>
+        <ul>
+          <li>Campanhas com direcionamento para conversas no WhatsApp</li>
+          <li>Públicos por localização nos bairros do entorno</li>
+          <li>Calendário de ofertas e datas sazonais</li>
+          <li>Estruturação dos criativos a partir de fotos e produtos da loja</li>
+          <li>Públicos de remarketing para quem já interagiu</li>
+          <li>Testes contínuos de ofertas, formatos e mensagens</li>
+        </ul>
+      </div>
+      <div class="blk rv">
+        <div class="h"><div class="num">04</div><h3>Acompanhamento estratégico</h3><p>Clareza sobre o que está gerando resultado</p></div>
+        <ul>
+          <li>Relatório mensal com contatos, ligações, rotas e custo por resultado</li>
+          <li>Reunião mensal de alinhamento com a gerência</li>
+          <li>Ajuste de verba entre canais conforme desempenho</li>
+          <li>Comunicação alinhada às regras da Anvisa para publicidade farmacêutica</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl rv" id="tl">
+      <div class="s"><b>Semana 1</b><h4>Base</h4><p>Acessos, revisão completa do perfil no Google, configuração de conversões e link de WhatsApp.</p></div>
+      <div class="s"><b>Semana 2</b><h4>Lançamento</h4><p>Campanhas de Google e Meta no ar, início da rotina de avaliações e publicações.</p></div>
+      <div class="s"><b>Semanas 3 e 4</b><h4>Otimização</h4><p>Leitura dos primeiros dados, cortes de termos e públicos que não convertem.</p></div>
+      <div class="s"><b>Mês 2 e 3</b><h4>Escala</h4><p>Mais verba no que traz venda, ofertas sazonais e ganho de posição no mapa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 DIFERENCIAIS -->
+<section>
+  <div class="wrap">
+    <span class="sec-num rv">05 / Como trabalhamos</span>
+    <h2 class="rv d1">Método antes de <em>verba.</em></h2>
+    <div class="method">
+      <div class="m rv"><div class="ic">&gt;</div><div><h4>Posicionamento antes do tráfego</h4><p>O anúncio só amplifica o que o perfil comunica. Por isso a primeira entrega é a vitrine pronta, não a campanha.</p></div></div>
+      <div class="m rv d1"><div class="ic">&gt;</div><div><h4>Foco em ação, não em alcance</h4><p>Medimos ligações, rotas e conversas no WhatsApp. Curtida e visualização não pagam o boleto da farmácia.</p></div></div>
+      <div class="m rv"><div class="ic">&gt;</div><div><h4>Estratégia local de verdade</h4><p>Segmentação pensada para o raio de atendimento da loja e para os horários em que ela está aberta.</p></div></div>
+      <div class="m rv d1"><div class="ic">&gt;</div><div><h4>Transparência total</h4><p>As contas de anúncio ficam no nome da farmácia. A verba é paga direto às plataformas e o acesso é sempre seu.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 VERBA -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <span class="sec-num rv">06 / Verba de anúncios sugerida</span>
+    <h2 class="rv d1">Quanto investir <em>nas plataformas.</em></h2>
+    <p class="intro rv d2">A verba de anúncios é separada do valor da gestão e paga diretamente ao Google e à Meta. A sugestão abaixo considera o raio de atuação da loja e o ticket médio do varejo farmacêutico.</p>
+    <div class="budget">
+      <div class="bud vf rv"><i class="c1"></i><i class="c2"></i>
+        <div class="t">Fase inicial / meses 1 a 3</div>
+        <div class="val">R$ 1.500<small> /mês</small></div>
+        <p>Suficiente para validar termos, públicos e ofertas com volume de dados para otimizar.</p>
+        <div class="split"><div class="a"></div><div class="b"></div></div>
+        <div class="legend"><span><i style="background:var(--orange)"></i>Meta Ads R$ 900</span><span><i style="background:var(--red)"></i>Google Ads R$ 600</span></div>
+      </div>
+      <div class="bud rv d1">
+        <div class="t">Fase de escala / a partir do mês 4</div>
+        <div class="val">R$ 2.500<small> /mês</small></div>
+        <p>Aumento gradual concentrado nos canais e campanhas que trouxerem o menor custo por contato e por venda.</p>
+        <div class="split"><div class="a" style="width:56%"></div><div class="b" style="width:44%"></div></div>
+        <div class="legend"><span><i style="background:var(--orange)"></i>Meta Ads R$ 1.400</span><span><i style="background:var(--red)"></i>Google Ads R$ 1.100</span></div>
+      </div>
+    </div>
+    <p class="budget-note rv">A divisão entre Meta e Google é ajustada mês a mês de acordo com o desempenho. É possível começar com um valor menor, com a ressalva de que o aprendizado das campanhas fica mais lento.</p>
+  </div>
+</section>
+
+<!-- 07 INVESTIMENTO -->
+<section style="overflow:hidden">
+  <div class="glow" style="width:500px;height:500px;background:var(--orange);top:10%;left:50%;transform:translateX(-50%);opacity:.18"></div>
+  <div class="wrap">
+    <span class="sec-num rv">07 / Investimento</span>
+    <h2 class="rv d1">Gestão de tráfego + Google Meu Negócio.</h2>
+    <div class="plans">
+      <div class="plan rv">
+        <div class="pt">Recorrente</div>
+        <div class="price"><span class="cur">R$</span>1.000<small> /mês</small></div>
+        <p class="desc">Pagamento mensal recorrente, com a primeira mensalidade na aprovação.</p>
+        <ul>
+          <li>Escopo completo dos blocos 01 a 04</li>
+          <li>Pagamento mensal via Pix ou boleto</li>
+          <li>Relatório e reunião mensal</li>
+        </ul>
+      </div>
+      <div class="plan best rv d1">
+        <div class="badge">Melhor condição</div>
+        <div class="pt">Pagamento integral / 3 meses</div>
+        <div class="price"><span class="cur">R$</span>2.400</div>
+        <span class="save">Economia de R$ 600 no trimestre</span>
+        <p class="desc">Valor integral do trimestre, parcelado em até 3x no cartão.</p>
+        <ul>
+          <li>Escopo completo dos blocos 01 a 04</li>
+          <li>Equivale a R$ 800 por mês</li>
+          <li>Em até 3x no cartão ou à vista via Pix</li>
+          <li>Período ideal para a fase de validação e ganho de posição no mapa</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pay-note rv">Verba de anúncios não inclusa, conforme sugestão da seção 06. Proposta válida por 10 dias a partir da data de envio.</p>
+  </div>
+</section>
+
+<!-- 08 PROXIMOS PASSOS -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <span class="sec-num rv">08 / Como avançamos</span>
+    <h2 class="rv d1">Do sim ao primeiro anúncio no ar em até <em>10 dias.</em></h2>
+    <div class="steps">
+      <div class="step rv"><h4>Aprovação</h4><p>Escolha do formato de pagamento e confirmação da proposta.</p></div>
+      <div class="step rv d1"><h4>Acessos</h4><p>Perfil da Empresa no Google, Gerenciador de Negócios da Meta e conta do Google Ads.</p></div>
+      <div class="step rv d2"><h4>Briefing</h4><p>Ofertas prioritárias, diferenciais da loja, tom das respostas e área de entrega.</p></div>
+      <div class="step rv d3"><h4>Execução</h4><p>Perfil otimizado e campanhas no ar seguindo o cronograma.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="grid-bg"></div>
+  <div class="glow" style="width:560px;height:560px;background:var(--orange);bottom:-300px;left:50%;transform:translateX(-50%);opacity:.35"></div>
+  <div class="wrap">
+    <h2 class="rv">A loja já conquista quem entra. <em>Vamos fazer mais gente entrar.</em></h2>
+    <p class="rv d1">Fale com a gente para aprovar a proposta ou tirar qualquer dúvida.</p>
+    <a class="btn rv d2" href="https://wa.me/5579936183288?text=Ol%C3%A1!%20Vi%20a%20proposta%20da%20FX%20Hub%20Creative%20para%20a%20Farm%C3%A1cia%20do%20Trabalhador%20Gruta." target="_blank" rel="noopener">Aprovar pelo WhatsApp &gt;&gt;&gt;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>FX Hub Creative / Aracaju, SE</span>
+    <span>Proposta preparada para Saúde Farma Ltda / Setembro 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar i').forEach(function(b){ b.style.width = b.dataset.w + '%'; });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var glows = document.querySelectorAll('[data-px]');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    glows.forEach(function(g){ g.style.transform = 'translateY(' + (y * parseFloat(g.dataset.px)) + 'px)'; });
+  }, {passive:true});
+
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.bar i').forEach(function(b){ b.style.width = b.dataset.w + '%'; });
+  });
+})();
+</script>
+</body>
+</html>
